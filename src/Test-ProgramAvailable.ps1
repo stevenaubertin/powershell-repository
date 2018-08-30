@@ -41,11 +41,11 @@
 [CmdletBinding()]
 Param(
     [Parameter(Mandatory=$True, Position=1)]
-    [string]$ProgramName
+    [string]$Name
 )
 
 try{
-    $_ = . $ProgramName
+    $_ = . $Name
     return $true
 }
 catch{
