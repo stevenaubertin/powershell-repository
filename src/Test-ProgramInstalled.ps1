@@ -43,7 +43,7 @@
  @param String $ProgramName The name of the program to check for.
  @return Booleam Returns true if a program matching the specified name is installed.
 
- This script is From : https://www.reich-consulting.net/support/lan-administration/check-if-a-program-is-installed-using-powershell-3/
+ This script is inspired from : https://www.reich-consulting.net/support/lan-administration/check-if-a-program-is-installed-using-powershell-3/
 
 #> 
 [CmdletBinding()]
@@ -52,10 +52,18 @@ Param(
     [string]$ProgramName
 )
 
-$x86 = ((Get-ChildItem "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall") |
-    Where-Object { $_.GetValue( "DisplayName" ) -like "*$ProgramName*" } ).Length -gt 0;
+$InstallationPathx86 = "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall"
+$InstallationPathx64 = "HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall"
 
-$x64 = ((Get-ChildItem "HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall") |
-    Where-Object { $_.GetValue( "DisplayName" ) -like "*$ProgramName*" } ).Length -gt 0;
+function Test-Installed {
+    param (
+        [Parameter(Mandatory=$True, Position=1)]
+        [string]$InstallationPath
+    )
+    return ((Get-ChildItem $InstallationPath) | Where-Object { $_.GetValue( "DisplayName" ) -like "*$ProgramName*" } ).Length -gt 0
+}
+
+$x86 = Test-Installed -InstallationPath $InstallationPathx86;
+$x64 = Test-Installed -InstallationPath $InstallationPathx64;
 
 return $x86 -or $x64;
