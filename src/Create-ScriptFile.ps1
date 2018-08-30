@@ -46,7 +46,7 @@ Param(
     [Parameter(Mandatory=$True,Position=1)]
     [string]$Path,
 
-    [Parameter(Mandatory=$True,Position=1)]
+    [Parameter(Mandatory=$True,Position=2)]
     [string]$Description,
 
     [string]$Author='stevenaubertin@gmail.com',
