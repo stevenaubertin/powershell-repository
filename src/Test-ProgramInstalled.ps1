@@ -40,7 +40,7 @@
  "Wow6432Node" location to ensure that both 32-bit and 64-bit locations are
  checked for software installations.
 
- @param String $program The name of the program to check for.
+ @param String $ProgramName The name of the program to check for.
  @return Booleam Returns true if a program matching the specified name is installed.
 
  This script is From : https://www.reich-consulting.net/support/lan-administration/check-if-a-program-is-installed-using-powershell-3/
