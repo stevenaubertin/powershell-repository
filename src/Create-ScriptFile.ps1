@@ -36,6 +36,7 @@
 
 .DESCRIPTION 
  Generates script with the default parameters for this repository.
+ Using New-ScriptFileInfo
 
  For more information about this script see : https://docs.microsoft.com/en-us/powershell/module/PowershellGet/New-ScriptFileInfo?view=powershell-5.1
 
