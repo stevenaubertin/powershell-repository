@@ -45,7 +45,7 @@ Param(
 )
 
 try{
-    chocos install $Name
+    choco install $Name
 }
 catch{    
     $install = 'n'
