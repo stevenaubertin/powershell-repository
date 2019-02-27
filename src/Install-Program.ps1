@@ -51,6 +51,6 @@ catch{
     $install = 'n'
     while(!('y','n' -contains ($install = $(Read-Host "To install $Name this script requires chocolatey which is not found, would you like to install it ?([Y]es/[N]o)")))){}
     if('y' -eq $install){
-        [System.Diagnostics.Process]::Start("https://chocolatey.org/install")
+        Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
     }
 }
