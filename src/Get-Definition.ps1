@@ -35,7 +35,7 @@
 <# 
 
 .DESCRIPTION 
- Nix-like wich command with "wich" alias 
+ Nix-like wich command with "wich" alias used to identify the location of executable.
 #> 
 [CmdletBinding()]
 [alias("which")]

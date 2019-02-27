@@ -35,7 +35,7 @@
 <# 
 
 .DESCRIPTION 
- Install a program 
+ Install a program using chocolatey https://chocolatey.org/.
 
 #> 
 [CmdletBinding()]
