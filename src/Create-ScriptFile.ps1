@@ -60,5 +60,5 @@ New-ScriptFileInfo -Path $Path `
                    -Version $Version `
                    -ProjectUri 'https://github.com/stevenaubertin/powershell-repository' `
                    -LicenseUri 'https://github.com/stevenaubertin/powershell-repository/blob/master/LICENSE.md' `
-                   -Copyright '(c) 2018'
+                   -Copyright '(c) 2019'
 
